@@ -73,6 +73,7 @@ h1 {
 #game-canvas {
   display: block;
   width: 100%;
+  aspect-ratio: 18 / 14;
   image-rendering: pixelated;
 }
 #overlay-canvas {
