@@ -59,10 +59,12 @@ function movePlayer(dr, dc) {
   const nr = player.row + dr, nc = player.col + dc;
   if (!isWalkable(nr, nc)) return;
 
-  player.row = nr;
-  player.col = nc;
-  steps++;
+player.row = nr;
+player.col = nc;
 
+// Movimento diagonal conta como 1.5 passos
+const isDiagonal = dr !== 0 && dc !== 0;
+steps += isDiagonal ? 1.5 : 1;
   // Caminho BFS é invalidado ao mover (posição mudou)
   showBFS = false;
   bfsPath = null;
