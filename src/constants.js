@@ -31,6 +31,7 @@ const RELIC_TYPES = [
   { emoji: '🗿',  name: 'Estátua', weight: 6, value: 80 },
   { emoji: '🔮',  name: 'Orbe',    weight: 2, value: 50 },
   { emoji: '🪙',  name: 'Moeda',   weight: 1, value: 15 },
+  { emoji: '🗺️',  name: 'Mapa Antigo',weight: 1,value: 45},
 ];
 
 // Cores dos tiles para o renderer
