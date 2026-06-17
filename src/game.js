@@ -293,6 +293,11 @@ const keyMap = {
   's': () => movePlayer( 1,  0), 'S': () => movePlayer( 1,  0),
   'a': () => movePlayer( 0, -1), 'A': () => movePlayer( 0, -1),
   'd': () => movePlayer( 0,  1), 'D': () => movePlayer( 0,  1),
+  // Movimentos diagonais 
+  '7': () => movePlayer(-1, -1), // noroeste
+  '9': () => movePlayer(-1,  1), // nordeste
+  '1': () => movePlayer( 1, -1), // sudoeste
+  '3': () => movePlayer( 1,  1), // sudeste
   'e': collectRelic,  'E': collectRelic,
   't': runTSP,        'T': runTSP,
   'b': runBFS,        'B': runBFS,
