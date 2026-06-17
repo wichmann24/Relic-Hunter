@@ -21,7 +21,7 @@ function initGame() {
   // Posiciona relíquias em tiles de chão aleatórios
   const floors = getFloorTiles(map);
   shuffle(floors);
-  const nRelics = 7;
+  const nRelics = 8;
   for (let i = 0; i < nRelics; i++) {
     const [r, c] = floors[i];
     const type = RELIC_TYPES[i % RELIC_TYPES.length];
