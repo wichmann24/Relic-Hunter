@@ -226,3 +226,11 @@ h1 {
   #app { grid-template-columns: 1fr; }
   #right-panel { order: -1; }
 }
+/* Timestamp do log de eventos */
+.log-ts {
+  color: #888;
+  font-size: 0.75em;
+  margin-right: 4px;
+  font-family: monospace;
+  user-select: none;
+}
