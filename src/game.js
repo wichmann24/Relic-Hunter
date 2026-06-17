@@ -258,10 +258,28 @@ function updateUI() {
 function addLog(msg) {
   const log = document.getElementById('log');
   const p   = document.createElement('p');
-  p.textContent = msg;
+
+  // Timestamp no formato HH:MM:SS
+  const now = new Date();
+  const hh  = String(now.getHours()).padStart(2, '0');
+  const mm  = String(now.getMinutes()).padStart(2, '0');
+  const ss  = String(now.getSeconds()).padStart(2, '0');
+
+  const ts = document.createElement('span');
+  ts.className = 'log-ts';
+  ts.textContent = `[${hh}:${mm}:${ss}] `;
+
+  p.appendChild(ts);
+  p.appendChild(document.createTextNode(msg));
+
   log.appendChild(p);
   log.scrollTop = log.scrollHeight;
-  if (log.children.length > 30) log.removeChild(log.firstChild);
+
+  const MAX_LOG_ENTRIES = 50;
+
+  while (log.children.length > MAX_LOG_ENTRIES) {
+    log.removeChild(log.firstChild);
+  }
 }
 
 // ---- Botões ------------------------------------------------
