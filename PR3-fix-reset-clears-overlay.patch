@@ -1,0 +1,17 @@
+diff --git a/src/game.js b/src/game.js
+index b0c30d1..1025844 100644
+--- a/src/game.js
++++ b/src/game.js
+@@ -39,6 +39,12 @@ function initGame() {
+   showTSP = false; showBFS = false;
+   gameWon = false;
+ 
++  // Limpa overlay de rotas (BFS/TSP) e painéis laterais
++  // Bug fix: sem isso, traçados do mapa anterior ficavam visíveis no novo mapa
++  const ovc = document.getElementById('overlay-canvas');
++  ovc.getContext('2d').clearRect(0, 0, ovc.width, ovc.height);
++  document.getElementById('tsp-result').textContent = 'Execute T para calcular a rota.';
++
+   document.getElementById('overlay-msg').style.display = 'none';
+   renderAll();
+   updateUI();
