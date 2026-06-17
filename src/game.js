@@ -32,16 +32,23 @@ function initGame() {
   // Jogador na primeira sala
   player = { row: rooms[0].cy, col: rooms[0].cx };
 
-  // Reset de estado
-  inventory = [];
-  steps = 0; score = 0;
-  tspPath = null; bfsPath = null;
-  showTSP = false; showBFS = false;
-  gameWon = false;
+// Reset de estado
+inventory = [];
+steps = 0; score = 0;
+tspPath = null; bfsPath = null;
+showTSP = false; showBFS = false;
+gameWon = false;
 
-  document.getElementById('overlay-msg').style.display = 'none';
-  renderAll();
-  updateUI();
+// Limpa overlay de rotas (BFS/TSP)
+const ovc = document.getElementById('overlay-canvas');
+ovc.getContext('2d').clearRect(0, 0, ovc.width, ovc.height);
+
+document.getElementById('tsp-result').textContent =
+  'Execute T para calcular a rota.';
+
+document.getElementById('overlay-msg').style.display = 'none';
+renderAll();
+updateUI();
   addLog('Novo mapa gerado! Explore as ruínas e colete relíquias.');
 }
 
